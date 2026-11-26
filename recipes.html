@@ -1,20 +1,89 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Affordable recipes and easy dinners from The Everyday Kitchen."><title>Recipes | The Everyday Kitchen</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<div class="topbar">GOOD FOOD. SMALL BUDGET. · Simple ideas for everyday cooking</div>
-<header class="site-header"><div class="wrap nav">
-<a class="brand" href="index.html">The Everyday Kitchen</a>
-<nav class="navlinks" aria-label="Main navigation">
-<a href="index.html">Home</a><a href="recipes.html">Recipes</a><a href="budget-meals.html">Budget Meals</a><a href="meal-planning.html">Meal Planning</a><a href="shop.html">Shop</a>
-</nav></div></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Browse easy dinner recipes, budget-friendly meals, and simple everyday cooking ideas from The Everyday Kitchen.">
+<meta name="theme-color" content="#173f27">
+<title>All Recipes | The Everyday Kitchen</title>
+<style>
+:root{--green:#173f27;--green2:#315c3b;--sage:#e9eedf;--cream:#fffaf2;--ink:#263329;--muted:#687368;--line:#e5e7dc;--gold:#f5e5bd}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.6 Georgia,serif}a{color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{background:#fffdf8;border-bottom:2px solid var(--green)}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:clamp(1.35rem,3vw,2rem);font-style:italic;font-weight:bold;color:var(--green);text-decoration:none;line-height:1.1}.brand small{display:block;font:12px/1.4 Arial,sans-serif;font-style:normal;color:var(--muted);letter-spacing:.04em;margin-top:5px}nav{display:flex;gap:20px;flex-wrap:wrap;font:14px Arial,sans-serif}nav a{text-decoration:none}nav a[aria-current=page]{color:var(--green);font-weight:bold;border-bottom:2px solid var(--green);padding-bottom:5px}
+.hero{text-align:center;padding:55px 0 42px;background:radial-gradient(ellipse at 50% 0%,#e9eedf 0,transparent 68%)}.eyebrow{font:700 12px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--green2)}h1{font-size:clamp(2.35rem,5vw,3.8rem);line-height:1.08;color:var(--green);margin:12px 0}.hero p{max-width:680px;margin:0 auto;color:#536052;font-size:1.12rem}
+.controls{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:28px 0 18px}.search{flex:1;min-width:230px;max-width:380px;border:1px solid #cfd7c8;border-radius:9px;background:white;padding:12px 14px;font:15px Arial,sans-serif;color:var(--ink)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #b9c6b5;border-radius:999px;background:white;color:var(--green);padding:9px 15px;font:700 13px Arial,sans-serif;cursor:pointer}.filter.active,.filter:hover{background:var(--green);color:white;border-color:var(--green)}
+.featured{display:grid;grid-template-columns:1.05fr 1fr;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px #21351d0c;margin:24px 0 42px}.featured img{width:100%;height:100%;min-height:310px;object-fit:cover;display:block}.feature-copy{padding:clamp(22px,4vw,42px);align-self:center}.tag{display:inline-block;background:var(--sage);color:var(--green);border-radius:99px;padding:5px 11px;font:700 11px Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}.feature-copy h2{font-size:clamp(1.7rem,3vw,2.35rem);line-height:1.15;color:var(--green);margin:14px 0 10px}.feature-copy p{color:var(--muted);margin:0 0 16px}.details{display:flex;gap:18px;flex-wrap:wrap;font:13px Arial,sans-serif;color:#4d5b4d;margin:18px 0}.btn{display:inline-block;background:var(--green);color:white;text-decoration:none;border-radius:8px;padding:11px 17px;font:700 14px Arial,sans-serif}.btn:hover{background:var(--green2)}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:0 0 18px}.section-heading h2{font-size:1.8rem;color:var(--green);margin:0}.section-heading p{margin:0;color:var(--muted);font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}.card{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 5px 18px #21351d08}.art{height:170px;display:grid;place-items:center;font-size:64px;background:linear-gradient(135deg,#e7eddb,#f9e9ca)}.art.two{background:linear-gradient(135deg,#f4e2c7,#e7eddb)}.art.three{background:linear-gradient(135deg,#e5ebd9,#f5dfd4)}.card-body{padding:19px;display:flex;flex-direction:column;flex:1}.card h3{font-size:1.28rem;line-height:1.2;color:var(--green);margin:10px 0 8px}.card p{font-size:.95rem;color:var(--muted);margin:0 0 14px}.card .details{margin:auto 0 14px}.card .btn{align-self:flex-start}.coming{font:700 12px Arial,sans-serif;color:#6c735f;background:#f1f2e9;border-radius:6px;padding:8px 10px;align-self:flex-start}
+.empty{display:none;text-align:center;background:white;border:1px dashed #bdc8b8;border-radius:12px;padding:30px;margin-bottom:40px;color:var(--muted)}
+.newsletter{background:var(--sage);border-radius:16px;padding:30px;text-align:center;margin:10px 0 45px}.newsletter h2{color:var(--green);margin:0 0 8px}.newsletter p{margin:0 auto;max-width:620px;color:#566353}
+footer{background:var(--green);color:white;padding:30px 0;text-align:center}footer p{margin:0 0 12px}.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;font:14px Arial,sans-serif}.footer-links a{color:white}
+@media(max-width:800px){.featured{grid-template-columns:1fr}.featured img{height:260px;min-height:0}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}.nav nav{gap:12px;font-size:13px}.hero{padding:38px 0 28px}.grid{grid-template-columns:1fr}.art{height:145px}.controls{align-items:stretch}.search{max-width:none}.filters{overflow-x:auto;padding-bottom:5px}.section-heading{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="index.html">The Everyday Kitchen<small>Budget-Friendly Meals • Easy Dinners • Healthy Choices</small></a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="recipes.html" aria-current="page">Recipes</a><a href="budget-meals.html">Budget Meals</a><a href="meal-planning.html">Meal Planning</a><a href="shop.html">Shop</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">Good food. Small budget.</div><h1>Find your next favorite meal</h1><p>Simple, satisfying recipes for busy days, cozy nights, and grocery budgets that need a little breathing room.</p></section>
 
-<main><section class="page-hero"><div class="wrap"><div class="eyebrow">The recipe collection</div><h1>Easy recipes for everyday cooking</h1><p>Browse dinner inspiration and practical meals. Recipe cards below are starter content—test and complete each recipe before publishing it as a finished recipe.</p></div></section>
-<section class="section"><div class="wrap"><div class="grid">
-<article class="card"><div class="food-art">🍝</div><div class="card-body"><span class="tag">Pasta · Dinner</span><h3>Creamy Garlic Chicken Pasta</h3><p>A cozy pasta idea with chicken, garlic and a creamy Parmesan-style sauce.</p><a class="textlink" href="creamy-garlic-chicken-pasta.html">View recipe →</a></div></article>
-<article class="card"><div class="food-art sage">🍲</div><div class="card-body"><span class="tag">One-pot · Dinner</span><h3>Cheesy Beef and Rice Skillet</h3><p>A flexible skillet dinner using ground beef, rice and vegetables.</p><a class="textlink" href="budget-meals.html">Explore meal ideas →</a></div></article>
-<article class="card"><div class="food-art rose">🌮</div><div class="card-body"><span class="tag">Quick dinner</span><h3>Chicken Quesadillas</h3><p>A customizable dinner idea for using cooked chicken and pantry staples.</p><a class="textlink" href="budget-meals.html">Explore meal ideas →</a></div></article>
-</div></div></section></main>
-<footer class="footer"><div class="wrap footer-grid">
-<div><a class="brand" href="index.html" style="color:#f0cda9">The Everyday Kitchen</a><p>Affordable recipes, simple ingredients and practical meal-planning ideas for everyday life.</p><p class="small">Food imagery in this starter site is represented by editable decorative placeholders. Replace with your own original or properly licensed food photos before publishing.</p></div>
-<div><strong>Explore</strong><a href="recipes.html">All Recipes</a><a href="budget-meals.html">Budget Meals</a><a href="meal-planning.html">Meal Planning</a></div>
-<div><strong>Information</strong><a href="shop.html">Shop</a><a href="disclosure.html">Affiliate Disclosure</a><a href="contact.html">Contact</a></div>
-</div><div class="wrap small" style="margin-top:25px">© 2026 The Everyday Kitchen · Replace this footer year if needed.</div></footer>
-</body></html>
+<section class="featured" aria-label="Featured recipe">
+<img src="assets/creamy-garlic-chicken-pasta.jpg" alt="Creamy garlic chicken pasta with Parmesan and parsley">
+<div class="feature-copy"><span class="tag">Featured recipe</span><h2>Creamy Garlic Chicken Pasta</h2><p>Tender chicken, pasta, and a creamy garlic-Parmesan sauce come together for a comforting weeknight dinner.</p><div class="details"><span>⏱ 35 minutes</span><span>🍽 4 servings</span><span>Easy</span></div><a class="btn" href="creamy-garlic-chicken-pasta.html">Get the recipe →</a></div>
+</section>
+
+<div class="section-heading"><div><div class="eyebrow">Browse the collection</div><h2>Recipes for real life</h2></div><p id="count" aria-live="polite">6 ideas to explore</p></div>
+<div class="controls">
+<input class="search" id="search" type="search" placeholder="Search recipes…" aria-label="Search recipes">
+<div class="filters" role="group" aria-label="Filter recipes">
+<button class="filter active" data-filter="all" type="button">All recipes</button>
+<button class="filter" data-filter="quick" type="button">Quick dinners</button>
+<button class="filter" data-filter="budget" type="button">Budget-friendly</button>
+<button class="filter" data-filter="vegetarian" type="button">Meatless</button>
+</div>
+</div>
+<section class="grid" id="recipeGrid" aria-label="Recipe cards">
+<article class="card" data-category="quick budget" data-search="creamy garlic chicken pasta chicken parmesan creamy dinner"><div class="art"><span aria-hidden="true">🍝</span></div><div class="card-body"><span class="tag">Pasta • Dinner</span><h3>Creamy Garlic Chicken Pasta</h3><p>A cozy skillet-style pasta with chicken, garlic, and Parmesan cream sauce.</p><div class="details"><span>35 min</span><span>4 servings</span></div><a class="btn" href="creamy-garlic-chicken-pasta.html">View recipe →</a></div></article>
+<article class="card" data-category="quick budget" data-search="cheesy beef rice skillet one pot dinner ground beef"><div class="art two"><span aria-hidden="true">🍲</span></div><div class="card-body"><span class="tag">One pot • Dinner</span><h3>Cheesy Beef &amp; Rice Skillet</h3><p>A hearty one-pan dinner idea with ground beef, rice, vegetables, and melted cheese.</p><div class="details"><span>30 min idea</span><span>One pan</span></div><span class="coming">Recipe coming soon</span></div></article>
+<article class="card" data-category="quick budget" data-search="chicken quesadillas tortillas cheese leftover chicken"><div class="art three"><span aria-hidden="true">🌮</span></div><div class="card-body"><span class="tag">Quick dinner</span><h3>Easy Chicken Quesadillas</h3><p>A flexible meal for using cooked chicken, tortillas, cheese, and whatever vegetables you have.</p><div class="details"><span>Quick idea</span><span>Pantry-friendly</span></div><span class="coming">Recipe coming soon</span></div></article>
+<article class="card" data-category="quick budget" data-search="lemon garlic chicken broccoli sheet pan dinner"><div class="art"><span aria-hidden="true">🍋</span></div><div class="card-body"><span class="tag">Sheet pan • Dinner</span><h3>Lemon Garlic Chicken &amp; Broccoli</h3><p>A simple dinner concept built around chicken, broccoli, lemon, and everyday seasonings.</p><div class="details"><span>Easy prep</span><span>Family-style</span></div><span class="coming">Recipe coming soon</span></div></article>
+<article class="card" data-category="quick budget vegetarian" data-search="tomato spinach pasta meatless vegetarian one pot"><div class="art two"><span aria-hidden="true">🍅</span></div><div class="card-body"><span class="tag">Meatless • Pasta</span><h3>One-Pot Tomato &amp; Spinach Pasta</h3><p>A colorful meatless dinner idea with tomatoes, spinach, pasta, and simple pantry staples.</p><div class="details"><span>One pot</span><span>Meatless</span></div><span class="coming">Recipe coming soon</span></div></article>
+<article class="card" data-category="budget" data-search="budget taco bowls rice beans corn ground beef chicken"><div class="art three"><span aria-hidden="true">🥑</span></div><div class="card-body"><span class="tag">Budget meal • Bowl</span><h3>Build-Your-Own Taco Bowls</h3><p>Stretch rice, beans, vegetables, and your choice of protein into customizable bowls.</p><div class="details"><span>Meal prep idea</span><span>Customizable</span></div><span class="coming">Recipe coming soon</span></div></article>
+</section>
+<div class="empty" id="empty">No recipes match that search yet. Try another keyword or choose a different filter.</div>
+<section class="newsletter"><h2>Make everyday meals easier</h2><p>Explore budget meal ideas and simple planning tips to make the most of what is already in your kitchen.</p></section>
+</main>
+<footer><div class="wrap"><p><strong>The Everyday Kitchen</strong> · Good food, small budget, everyday inspiration.</p><div class="footer-links"><a href="index.html">Home</a><a href="budget-meals.html">Budget Meals</a><a href="meal-planning.html">Meal Planning</a><a href="disclosure.html">Affiliate Disclosure</a><a href="contact.html">Contact</a></div><p class="small" style="color:#e5eddf;margin-top:15px">© 2026 The Everyday Kitchen</p></div></footer>
+<script>
+const search = document.getElementById('search');
+const cards = [...document.querySelectorAll('.card')];
+const filters = [...document.querySelectorAll('.filter')];
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+let active = 'all';
+function update(){
+  const term = search.value.trim().toLowerCase();
+  let shown = 0;
+  cards.forEach(card=>{
+    const category = card.dataset.category.split(' ');
+    const matchesFilter = active === 'all' || category.includes(active);
+    const matchesSearch = (card.dataset.search + ' ' + card.innerText).toLowerCase().includes(term);
+    const visible = matchesFilter && matchesSearch;
+    card.hidden = !visible;
+    if(visible) shown++;
+  });
+  count.textContent = `${shown} ${shown === 1 ? 'recipe' : 'recipes'} shown`;
+  empty.style.display = shown ? 'none' : 'block';
+}
+filters.forEach(button=>button.addEventListener('click',()=>{
+  active = button.dataset.filter;
+  filters.forEach(item=>item.classList.toggle('active',item===button));
+  update();
+}));
+search.addEventListener('input',update);
+</script>
+</body>
+</html>
